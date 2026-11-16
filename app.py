@@ -13,16 +13,19 @@ def multiply(a, b):
     return a * b
 
 
+def power(base, exponent):
+    return base ** exponent
+
+
 def divide(a, b):
     if b == 0:
-        raise ValueError("Деление на ноль")
+        return None
     return a / b
 
 
 def average(numbers):
-    if not numbers:
-        return 0
-    return sum(numbers) / len(numbers)
+    values = [n for n in numbers if n > 0]
+    return sum(values) / len(values)
 
 
 class TodoList:
@@ -35,6 +38,9 @@ class TodoList:
     def complete(self, index):
         self.items[index]["done"] = True
 
+    def remove(self, index):
+        del self.items[index]
+
     def pending(self):
         return [item for item in self.items if not item["done"]]
 
@@ -42,7 +48,8 @@ class TodoList:
 def main():
     print("2 + 3 =", add(2, 3))
     print("10 / 4 =", divide(10, 4))
-    print("average:", average([1, 2, 3, 4]))
+    print("2 ** 8 =", power(2, 8))
+    print("average:", average([1, 2, 3, 4, -5]))
 
     todo = TodoList()
     todo.add("Написать код")
