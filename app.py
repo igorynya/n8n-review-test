@@ -46,9 +46,12 @@ class TodoList:
     def complete(self, index):
         self.items[index]["done"] = True
         return self.items[index]
+<<<<<<< HEAD
 
     def remove(self, index):
         del self.items[index]
+=======
+>>>>>>> 4a8fdb58e8f16531af2aaf8b428429da996f720b
 
     def pending(self):
         return [item for item in self.items if not item["done"]]
@@ -57,9 +60,14 @@ class TodoList:
 def main():
     print("2 + 3 =", add(2, 3))
     print("10 / 4 =", divide(10, 4))
+<<<<<<< HEAD
     print("2 ** 8 =", power(2, 8))
     print("parse:", parse_number("3 * 7"))
     print("average:", average([1, 2, 3, 4, -5]))
+=======
+    print("parse:", parse_number("3 * 7"))
+    print("average:", average([1, 2, 3, 4]))
+>>>>>>> 4a8fdb58e8f16531af2aaf8b428429da996f720b
 
     todo = TodoList()
     todo.add("Написать код")
